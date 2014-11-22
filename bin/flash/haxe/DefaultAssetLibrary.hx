@@ -68,37 +68,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("font/04B_03__.ttf", AssetType.FONT);
 		className.set ("font/04B_03__.ttf.png", __ASSET__font_04b_03___ttf_png);
 		type.set ("font/04B_03__.ttf.png", AssetType.IMAGE);
-		path.set ("graphics/player/front.png", "graphics/player/front.png");
-		type.set ("graphics/player/front.png", AssetType.IMAGE);
-		path.set ("graphics/player/hurt.png", "graphics/player/hurt.png");
-		type.set ("graphics/player/hurt.png", AssetType.IMAGE);
-		path.set ("graphics/player/jump.png", "graphics/player/jump.png");
-		type.set ("graphics/player/jump.png", AssetType.IMAGE);
-		path.set ("graphics/player/stand.png", "graphics/player/stand.png");
-		type.set ("graphics/player/stand.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk01.png", "graphics/player/walk/walk01.png");
-		type.set ("graphics/player/walk/walk01.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk02.png", "graphics/player/walk/walk02.png");
-		type.set ("graphics/player/walk/walk02.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk03.png", "graphics/player/walk/walk03.png");
-		type.set ("graphics/player/walk/walk03.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk04.png", "graphics/player/walk/walk04.png");
-		type.set ("graphics/player/walk/walk04.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk05.png", "graphics/player/walk/walk05.png");
-		type.set ("graphics/player/walk/walk05.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk06.png", "graphics/player/walk/walk06.png");
-		type.set ("graphics/player/walk/walk06.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk07.png", "graphics/player/walk/walk07.png");
-		type.set ("graphics/player/walk/walk07.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk08.png", "graphics/player/walk/walk08.png");
-		type.set ("graphics/player/walk/walk08.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk09.png", "graphics/player/walk/walk09.png");
-		type.set ("graphics/player/walk/walk09.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk10.png", "graphics/player/walk/walk10.png");
-		type.set ("graphics/player/walk/walk10.png", AssetType.IMAGE);
-		path.set ("graphics/player/walk/walk11.png", "graphics/player/walk/walk11.png");
-		type.set ("graphics/player/walk/walk11.png", AssetType.IMAGE);
-		path.set ("font/04B_03__.ttf", "font/04B_03__.ttf");
+		className.set ("font/04B_03__.ttf", __ASSET__font_5);
 		type.set ("font/04B_03__.ttf", AssetType.FONT);
 		
 		
@@ -138,6 +108,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "font/04B_03__.ttf.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "font/04B_03__.ttf";
+		className.set (id, __ASSET__font_5);
+		type.set (id, AssetType.FONT);
 		
 		
 		#else
@@ -178,22 +151,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("font/04B_03__.ttf.png", __ASSET__font_04b_03___ttf_png);
 		type.set ("font/04B_03__.ttf.png", AssetType.IMAGE);
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
+		
+		className.set ("font/04B_03__.ttf", __ASSET__font_5);
+		type.set ("font/04B_03__.ttf", AssetType.FONT);
 		
 		
 		if (useManifest) {
@@ -820,24 +780,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__graphics_debug_console_step_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__graphics_debug_console_visible_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__graphics_preloader_haxepunk_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__font_04b_03___ttf extends null { }
+@:keep class __ASSET__font_04b_03___ttf extends openfl.text.Font { }
 @:keep class __ASSET__font_04b_03___ttf_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@:keep class __ASSET__font_5 extends openfl.text.Font { }
 
 
 #elseif html5
@@ -852,21 +797,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:keep class __ASSET__font_04b_03___ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "font/04B_03__.ttf"; } #end }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @:keep class __ASSET__font_5 extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "font/04B_03__.ttf"; } #end }
 
@@ -885,6 +815,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:bitmap("C:/HaxeToolkit/haxe/lib/HaxePunk/2,5,3/assets/graphics/preloader/haxepunk.png") class __ASSET__graphics_preloader_haxepunk_png extends flash.display.BitmapData {}
 @:font("C:/HaxeToolkit/haxe/lib/HaxePunk/2,5,3/assets/font/04B_03__.ttf") class __ASSET__font_04b_03___ttf extends flash.text.Font {}
 @:bitmap("C:/HaxeToolkit/haxe/lib/HaxePunk/2,5,3/assets/font/04B_03__.ttf.png") class __ASSET__font_04b_03___ttf_png extends flash.display.BitmapData {}
+@:font("assets/font/04B_03__.ttf") class __ASSET__font_5 extends flash.text.Font {}
 
 
 #end

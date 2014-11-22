@@ -111,7 +111,7 @@ class ApplicationMain {
 			(false ? flash.Lib.REQUIRE_SHADERS : 0) |
 			(false ? flash.Lib.DEPTH_BUFFER : 0) |
 			(false ? flash.Lib.STENCIL_BUFFER : 0) |
-			(true ? flash.Lib.RESIZABLE : 0) |
+			(false ? flash.Lib.RESIZABLE : 0) |
 			(false ? flash.Lib.BORDERLESS : 0) |
 			(false ? flash.Lib.VSYNC : 0) |
 			(false ? flash.Lib.FULLSCREEN : 0) |
