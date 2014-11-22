@@ -15,7 +15,7 @@ class Player extends Entity {
 	public function new(x:Float, y:Float) {
 		super(x, y);
 
-		walkingImages = [for(i in 1 ... 12) (i < 10) ? new Image("graphics/player/walk/walk0" + i + ".png") : new Image("graphics/player/walk/walk" + i + ".png")];
+		walkingImages = [for(i in 2 ... 9) (i < 10) ? new Image("graphics/player/walk/walk0" + i + ".png") : new Image("graphics/player/walk/walk" + i + ".png")];
 		currentWalkingImage = 0;
 		walkingImageTime = 0;
 		graphic = walkingImages[currentWalkingImage];
@@ -26,7 +26,7 @@ class Player extends Entity {
 		walkingImageTime += HXP.elapsed;
 		if(walkingImageTime >= GRAPHIC_FRAME_TIME){
 		      currentWalkingImage ++;
-		      currentWalkingImage %= 12;
+		      currentWalkingImage %= 7;
 		      walkingImageTime = 0;
 		      graphic = walkingImages[currentWalkingImage];
 		}
