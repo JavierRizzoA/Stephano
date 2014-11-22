@@ -10,6 +10,8 @@ import com.haxepunk.utils.Key;
 
 class Player extends Physics {
 
+	private static inline var GRAPHIC_FRAME_TIME:Float = 0.1;
+
 	public var sprite:Spritemap;
 
 	public var movement:Float;
@@ -25,6 +27,16 @@ class Player extends Physics {
 
 	public var dead:Bool;
 	public var start:Point;
+
+	private var walkingImages:Array<Image>;
+	private var currentWalkingImage:Int;
+	private var walkingImageTime:Float = 0;
+	private var duckImage:Image;
+	private var hurtImage:Image;
+	private var jumpImage:Image;
+	private var standImage:Image;
+	private var flipGraphic:Bool;
+	private var wasWalking:Bool;
 
 	public function new(x:Int, y:Int) {
 		super(x, y);
@@ -53,6 +65,15 @@ class Player extends Physics {
         Input.define("up", [Key.W, Key.UP]);
         Input.define("down", [Key.S, Key.DOWN]);
         Input.define("jump", [Key.SPACE]);
+
+        walkingImages = [for(i in 2 ... 9) (i < 10) ? new Image("graphics/player/walk/walk0" + i + ".png") : new Image("graphics/player/walk/walk" + i + ".png")];
+		currentWalkingImage = 0;
+		walkingImageTime = 0;
+		duckImage = new Image("graphics/player/duck.png");
+		hurtImage = new Image("graphics/player/hurt.png");
+		jumpImage = new Image("graphics/player/jump.png");
+		standImage = new Image("graphics/player/stand.png");
+		wasWalking = false;
 	}
 
 	public override function update():Void {
@@ -109,6 +130,35 @@ class Player extends Physics {
 		if(collide("Spikes", x, y) != null && speed.y > 0) {
 			killme();
 		}
+
+		if(onGround) {
+			walkingImageTime += HXP.elapsed;
+			if(Math.abs(speed.x) > 0) {
+				if(!wasWalking) {
+					currentWalkingImage = 0;
+					wasWalking = true;
+					walkingImageTime = 0;
+				}
+				if(walkingImageTime >= GRAPHIC_FRAME_TIME) {
+					currentWalkingImage ++;
+					currentWalkingImage %= 7;
+					walkingImageTime = 0;
+				}
+				if(speed.x > 0) {
+					walkingImages[currentWalkingImage].flipped = false;
+				} else {
+					walkingImages[currentWalkingImage].flipped = true;
+				}
+				graphic = walkingImages[currentWalkingImage];
+			} else {
+				standImage.flipped = !direction;
+				graphic = standImage;
+			}
+		} else {
+			jumpImage.flipped = !direction;
+			graphic = jumpImage;
+		}
+
 	}
 
 	public function killme():Void {
