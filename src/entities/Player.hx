@@ -10,7 +10,7 @@ import com.haxepunk.utils.Key;
 
 class Player extends Physics {
 
-	private static inline var GRAPHIC_FRAME_TIME:Float = 0.1;
+	private static inline var GRAPHIC_FRAME_TIME:Float = 0.02;
 
 	public var sprite:Spritemap;
 
@@ -53,8 +53,8 @@ class Player extends Physics {
 		start = new Point();
 
 		mGravity = 0.4;
-		mMaxSpeed = new Point(4, 8);
-		mFriction = new Point(0.5, 0.5);
+		mMaxSpeed = new Point(4, 16);
+		mFriction = new Point(0.4, 0.5);
 
 		setHitbox(66, 92);
 		graphic = new Image("graphics/player/stand.png");
